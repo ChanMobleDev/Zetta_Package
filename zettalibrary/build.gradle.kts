@@ -53,11 +53,11 @@ afterEvaluate {
     publishing {
         publications {
             register<MavenPublication>("release") {
-                from(components.findByName("release"))
+                from(components["release"]) // ✅ FIXED
 
                 groupId = "com.github.ChanMobleDev"
-                artifactId = "My_Package"
-                version = "1.0.3"
+                artifactId = "Zetta_Package" // ⚠️ must match repo
+                version = "1.0.4"
             }
         }
     }
