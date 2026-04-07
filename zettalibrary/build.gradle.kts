@@ -32,6 +32,12 @@ android {
     buildFeatures {
         compose = true
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -49,9 +55,9 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 from(components.findByName("release"))
 
-                groupId = "com.github.YourUsername"
+                groupId = "com.github.ChanMobleDev"
                 artifactId = "My_Package"
-                version = "1.0.0"
+                version = "1.0.3"
             }
         }
     }
